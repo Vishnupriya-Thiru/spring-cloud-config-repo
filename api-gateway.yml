@@ -16,3 +16,5 @@ cloud:
         uri: http://localhost:8082
         predicates:
           - Path=/api/wallet/**
+jwt:
+  secret: 4E57682B4D6251655468576D5A7134743777217A25432A462D4A614E64526755
