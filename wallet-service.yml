@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: WALLET-SERVICE
+    name: wallet-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/walletdb
