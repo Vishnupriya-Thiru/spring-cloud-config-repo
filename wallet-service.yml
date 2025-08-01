@@ -3,7 +3,22 @@ server:
 
 spring:
   application:
-    name: wallet-service
+    name: WALLET-SERVICE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/walletdb
+    username: postgres
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 jwt:
-  secret: my-jwt-secret-key
+  secret: 4E57682B4D6251655468576D5A7134743777217A25432A462D4A614E64526755
