@@ -17,8 +17,7 @@ spring:
           predicates:
             - Path=/api/auth/**
           filters:
-            - PreserveHostHeader
-            - RewritePath=/api/auth/(?<segment>.*), /api/auth/${segment}
+            - SetPath=/api/auth/{remaining}
 
         - id: wallet-service
           uri: lb://wallet-service
