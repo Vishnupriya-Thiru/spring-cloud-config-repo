@@ -11,11 +11,11 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/auth/**
+            - Path=api/auth/**
         - id: wallet-service
           uri: lb://wallet-service
           predicates:
-            - Path=/wallet/**
+            - Path=api/wallet/**
 
     discovery:
       locator:
