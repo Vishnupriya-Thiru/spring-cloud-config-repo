@@ -15,9 +15,9 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/api/auth/**
+            - Path=/api/auth/{segment}
           filters:
-            - SetPath=/api/auth/{remaining}
+            - SetPath=/{segment}
 
         - id: wallet-service
           uri: lb://wallet-service
