@@ -12,15 +12,11 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
-          filters:
-            - StripPrefix=2
 
         - id: wallet-service
           uri: lb://wallet-service
           predicates:
             - Path=/api/wallet/**
-          filters:
-            - StripPrefix=1
 
     discovery:
       locator:
