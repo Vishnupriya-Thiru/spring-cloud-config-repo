@@ -23,6 +23,9 @@ spring:
         lower-case-service-id: true
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
