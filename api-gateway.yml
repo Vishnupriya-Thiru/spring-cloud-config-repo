@@ -7,9 +7,13 @@ spring:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
 
@@ -17,11 +21,6 @@ spring:
           uri: lb://wallet-service
           predicates:
             - Path=/api/wallet/**
-
-    discovery:
-      locator:
-        enabled: true
-        lower-case-service-id: true
 
 eureka:
   instance:
