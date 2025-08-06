@@ -16,10 +16,6 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
-        - id: wallet-service
-          uri: lb://wallet-service
-          predicates:
-            - Path=/api/wallet/**
 
 eureka:
   instance:
