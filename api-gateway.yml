@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
 
   cloud:
     gateway:
@@ -16,7 +18,6 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
-
         - id: wallet-service
           uri: lb://wallet-service
           predicates:
@@ -26,7 +27,6 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: localhost
-
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -35,3 +35,9 @@ eureka:
 
 jwt:
   secret: 4E57682B4D6251655468576D5A7134743777217A25432A462D4A614E64526755
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty: DEBUG
