@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: api-gateway
-  config:
-    import: optional:configserver:http://localhost:8888
 
   cloud:
     gateway:
@@ -35,9 +33,3 @@ eureka:
 
 jwt:
   secret: 4E57682B4D6251655468576D5A7134743777217A25432A462D4A614E64526755
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.netty: DEBUG
