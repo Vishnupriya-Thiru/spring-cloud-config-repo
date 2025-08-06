@@ -12,12 +12,10 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/api/auth/{segment}
-          filters:
-            - SetPath=/{segment}
+         - id: auth-service
+         uri: lb://auth-service
+         predicates:
+           - Path=/api/auth/**
 
         - id: wallet-service
           uri: lb://wallet-service
